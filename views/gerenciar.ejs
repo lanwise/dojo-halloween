@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css" />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+  	<section>
+	    <h1>Gerenciar</h1>
+	    <table class="table table-striped" ng-controller="TicketsController">
+	    	<tr>
+	    		<th>Assunto</th>
+	    		<th>Categoria</th>
+	    		<th>Descrição</th>
+	    	</tr>
+	    	<tr ng-repeat='ticket in tickets'>
+	    		<td>{{ticket.assunto}}</td>
+	    		<td>{{ticket.categoria}}</td>
+	    		<td>{{ticket.descricao}}</td>
+	    	</tr>
+	    </table>
+	</section>
+
+	<script src="/javascripts/angular.js"></script>
+	<script src="/javascripts/TicketsController.js"></script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css" />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+  	<section ng-controller="TicketsController">
+
+	    <h1>Salvar tickets</h1>
+	    <form class="form-inline" ng-submit='adicionaTickets()'>
+	    	<div class="form-group">  	
+	    		<input type='text' placeholder='Nome' class="form-control" ng-model='ticket.assunto'/>
+	    	</div>
+	    	<div class="form-group">
+	    		<input type="text" placeholder='Telefone' class="form-control" ng-model='ticket.categoria'/>
+	    	</div>
+	    	<div class="form-group">
+	    		<input type="text" placeholder='Telefone' class="form-control" ng-model='ticket.descricao'/>
+	    	</div>
+
+	    		<button type='submit' class='btn btn-primary'>Salvar</button>
+	    </form>
+
+	    <h1>Tickets</h1>
+	    <table class="table table-striped">
+	    	<tr>
+	    		<th>Assunto</th>
+	    		<th>Categoria</th>
+	    		<th>Descrição</th>
+	    	</tr>
+	    	<tr ng-repeat='ticket in tickets'>
+	    		<td>{{ticket.assunto}}</td>
+	    		<td>{{ticket.categoria}}</td>
+	    		<td>{{ticket.descricao}}</td>
+	    	</tr>
+	    </table>
+
+	</section>
+
+	<script src="/javascripts/angular.js"></script>
+	<script src="/javascripts/TicketsController.js"></script>
+  </body>
+</html>
